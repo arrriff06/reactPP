@@ -1,12 +1,15 @@
-import { StrictMode } from 'react';
+import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './Card.jsx';
+import App from './App.jsx';
+//import ReusableTable from './ReusableTable.jsx';
 
-import SimpleFormTable from './SimpleFormTable.jsx';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Button from './Button.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SimpleFormTable />
+    <App />
   </StrictMode>
 );
