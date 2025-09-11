@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import Card from './Card.jsx';
 import App from './App.jsx';
-import Products from './Products.jsx';
+import Insert from './insert.jsx';
 //import ReusableTable from './ReusableTable.jsx';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +11,6 @@ import Products from './Products.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Products />
+    <Insert />
   </StrictMode>
 );
