@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular MVC Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 420px; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 8px; text-align: left; }
+        .row { margin: 6px 0; }
+        label { display: inline-block; width: 90px; }
+    </style>
+</head>
+<body ng-controller="ProductController">
+    <h2>Products</h2>
+    <div class="row">
+        <label>Title:</label>
+        <input type="text" ng-model="product.title" placeholder="e.g., Keyword" />
+    </div>
+
+    <div class="row">
+        <label>Price:</label>
+        <input type="number" ng-model="product.price" placeholder="e.g., 799" />
+    </div>
+
+    <div class="row">
+        <label>Stock:</label>
+        <input type="number" ng-model="product.stock" placeholder="e.g., 10" />
+    </div>
+
+    <button ng-click="addProduct()">Add</button>
+    <button ng-click="reset()">Reset</button>
+
+    <table>
+        <thead>
+            <tr><th>#</th><th>Title</th><th>Price</th><th>Stock</th><th></th></tr>
+        </thead>
+        <tbody>
+            
+            <tr ng-repeat="p in products track by $index">
+                <td>{{$index + 1}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.price | currency: '₹'}}</td>
+                <td>{{p.stock}}</td>
+                <td><button ng-click="remove($index)">Remove</button></td>
+            </tr>
+            <tr ng-if="products.length === 0">
+                <td colspan="5" style="text-align:center;color:#666;">No products</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
